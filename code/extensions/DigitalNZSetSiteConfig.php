@@ -77,7 +77,7 @@ class DigitalNZSetSiteConfig extends DataExtension implements PermissionProvider
      * 
      * @return boolean
      */
-    public function subsiteCheck() {
+    public static function subsiteCheck() {
     	if (SiteConfig::current_site_config()->UseWithSubsite) {
     		return SubSiteConfig::display('ClassName', 'display');
     	}
