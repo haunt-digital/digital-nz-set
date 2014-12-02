@@ -12,7 +12,7 @@ SilverStripe 3+
 
 Documentation
 -----------------------------------------------
-A Silverstripe module for interacting with Digital NZ sets.
+A Silverstripe module for interacting with Digital NZ sets via the Digital NZ API.
 This currently only has functions for working with Digital NZ sets.
 
 Installation Instructions

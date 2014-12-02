@@ -1,0 +1,10 @@
+#
+# Editor/IDE files
+
+# Ignore sublime files
+*.sublime-*
+*.pyc
+
+# Ignore eclipse files
+.project
+.settings

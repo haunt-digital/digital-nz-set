@@ -1,0 +1,21 @@
+{
+    "name": "hauntdigital/digital-nz-set",
+    "description": "Interacting with Digital NZ sets via the Digital NZ API.",
+    "keywords": ["Digital NZ", "silverstripe"],
+    "type": "silverstripe-module",
+    "require": {
+        "composer/installers": "*",
+        "silverstripe/cms": ">=3.1",
+        "silverstripe/framework": ">=3.1"
+    },
+    "authors": [
+        {
+            "name": "Richard Matthews",
+            "email": "richard@hauntdigital.co.nz"
+        }, 
+        {
+            "name": "Avigail Lim",
+            "email": "avigail@hauntdigital.co.nz"
+        }
+    ]
+}

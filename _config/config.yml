@@ -1,0 +1,6 @@
+---
+Name: digital-nz-set
+---
+SiteConfig:
+  extensions:
+   - DigitalNZSetSiteConfig
