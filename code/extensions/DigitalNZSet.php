@@ -30,7 +30,7 @@ class DigitalNZSet extends DataExtension {
                     $collection = json_decode($return);
 
                     if(isset($collection->errors)) {
-                        echo $collection->errors;
+                        error_log($collection->errors, 0);
                     } else {
                         $set_content['id'] = $collection->set->id;
                         $set_content['name'] = $collection->set->name;
@@ -81,7 +81,7 @@ class DigitalNZSet extends DataExtension {
                     $collection = json_decode($return);
 
                     if(isset($collection->errors)) {
-                        echo $collection->errors;
+                        error_log($collection->errors, 0);
                     } else {
                         $i = 0;
                         foreach ($collection->set->records as $r) {
