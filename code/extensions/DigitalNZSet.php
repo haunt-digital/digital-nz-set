@@ -46,13 +46,13 @@ class DigitalNZSet extends DataExtension {
                         $set_content['tags'] = $collection->set->tags;
                     }
                 } else {
-                    echo 'You are missing the API Key, this can be set up in the admin/settings of your subsite.';
+                    error_log("You are missing the API Key, this can be set up in the admin/settings of your subsite.", 0);
                 }
 
                 return $set_content;
 
             } else {
-                echo 'This function requires a set id.';
+                error_log("This function requires a set id.", 0);
             }
         }
     }
@@ -112,13 +112,13 @@ class DigitalNZSet extends DataExtension {
                         }
                     }
                 } else {
-                    echo 'You are missing the API Key, this can be set up in the admin/settings of your subsite.';
+                    error_log('You are missing the API Key, this can be set up in the admin/settings of your subsite.', 0);
                 }
 
                 return $records;
 
             } else {
-                echo 'This function requires a set id.';
+                error_log('This function requires a set id.', 0);
             }
         }
     }
