@@ -15,20 +15,24 @@ Documentation
 A Silverstripe module for interacting with Digital NZ sets via the Digital NZ API.
 This currently only has functions for working with Digital NZ sets.
 
-The previously committed config.yml has been removed so that the Digital NZ tab doesn't automatically appear on every subsite.
-It will have to be manually added in to the site/subsite's config.yml file.
+This module is meant to be used with the subsites module as it was initially produced for the First World War site that is to go to MoE's CWP, 
+and they are using the subsites module in a strange way - that is they have sompletely different sites using the subsites module.
+Make sure to note Installation Instruction #2 if you're not using the subsites module.
+
+If you are using the subsites module, please note Installation Instruction #3.
 
 Installation Instructions
 -----------------------------------------------
 1. Install SilverStripe module as usual. 
-2. Add the following to your config so that the 'Digital NZ' tab appears. 
-    SiteConfig:
-      extensions:
-       - DigitalNZSetSiteConfig
-2. Run /dev/build?flush=1
-3. In the admin/settings page you should have a tab for 'Digital NZ'.
-4. Enter your Digital NZ API key into the form. 
-5. Set subsites module usage for this site. 
+2. If you're using this module on an install that doesn't use the subsites module, Remove the line below in the DigitalNZSetSiteConfig.php file. R
+Remove the closing curly brace for it as well.
+    (line 31)
+    if (SubSiteConfig::display('DigitalNZ', 'display')) {
+3. If you're using subsites, make sure to add your subsite constant to the config.yml file in this module under DigitalNZ > Display.    
+4. Run /dev/build?flush=1
+5. In the admin/settings page you should have a tab for 'Digital NZ'.
+6. Enter your Digital NZ API key into the form. 
+7. Set subsites module usage for this site. 
 
 Basic Usage
 -----------------------------------------------

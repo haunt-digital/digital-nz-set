@@ -26,27 +26,32 @@ class DigitalNZSetSiteConfig extends DataExtension implements PermissionProvider
      */
     public function updateCMSFields(FieldList $fields) {
     	
-    	// Check to see if this is used with subsites
-    	if (DigitalNZSetSiteConfig::subsiteCheck()) {
-
-        	$fields->removebyName('SubsiteID');
-        	
-        	$digitalNZ = $fields->findOrMakeTab('Root.DigitalNZ');
-        	$digitalNZ->title = 'Digital NZ';
-        	
-        	$digitalNZ->push($digitalNZApiKey = new TextField('DigitalNZApiKey', 'Digital NZ Api Key'));
-        	$digitalNZApiKey->setDescription('The Digital NZ api key to use.');
-        	
-        	$digitalNZ->push($useWithSubsite = new OptionsetField("UseWithSubsite", "Use with Subsites?", array("1" => "Yes", "0" => "No",), "0"));
-        	$useWithSubsite->setDescription("Select 'Yes' if you're using subsites in this installation so that the Digital NZ set module is limited to a subsite.");
-        	
-        	// Make sure only a developer can change this value
-        	if (!Permission::check('DIGITALNZ_DEVELOPER_EDIT')) {
-        		$fields->makeFieldReadonly('SubSiteConstant');
-        	}
-        	
-        	return $fields;
-    	}   	  	
+    	// Only within Ministry of Education environment or an install that uses the subsite module. Remove if statement if deployed elsewhere.
+    	// See (public): https://gitlab.cwp.govt.nz/modules/subsite-config/tree/master
+    	if (SubSiteConfig::display('DigitalNZ', 'display')) {
+    		
+	    	// Check to see if this is used with subsites
+	    	if (DigitalNZSetSiteConfig::subsiteCheck()) {
+	
+	        	$fields->removebyName('SubsiteID');
+	        	
+	        	$digitalNZ = $fields->findOrMakeTab('Root.DigitalNZ');
+	        	$digitalNZ->title = 'Digital NZ';
+	        	
+	        	$digitalNZ->push($digitalNZApiKey = new TextField('DigitalNZApiKey', 'Digital NZ Api Key'));
+	        	$digitalNZApiKey->setDescription('The Digital NZ api key to use.');
+	        	
+	        	$digitalNZ->push($useWithSubsite = new OptionsetField("UseWithSubsite", "Use with Subsites?", array("1" => "Yes", "0" => "No",), "0"));
+	        	$useWithSubsite->setDescription("Select 'Yes' if you're using subsites in this installation so that the Digital NZ set module is limited to a subsite.");
+	        	
+	        	// Make sure only a developer can change this value
+	        	if (!Permission::check('DIGITALNZ_DEVELOPER_EDIT')) {
+	        		$fields->makeFieldReadonly('SubSiteConstant');
+	        	}
+	        	
+	        	return $fields;
+	    	}   	
+    	}	  	
 
     }
 
