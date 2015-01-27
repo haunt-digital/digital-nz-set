@@ -68,6 +68,9 @@ This module works with or without the Subsites module by configuring it in the D
 There is a subsiteCheck function wrapped around every function to check if the subsite module is in use. If so, it then does the recommended subsite check. 
 It's not be best way of doing things but it seems to be the way of the subsite (and subsite-related) module.
 
+To get the Digital NZ tab to not automatically display in every subsite, I've had to add some yucky code. Docs and install instructions have been laid out.
+There might be a better way to do this but there no time or budget at present to pursue this. 
+
    
 THANK YOU
 -----------------------------------------------
