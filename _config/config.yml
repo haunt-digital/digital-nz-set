@@ -4,7 +4,3 @@ Name: digital-nz-set
 SiteConfig:
   extensions:
    - DigitalNZSetSiteConfig
-   
-DigitalNZ:
-  display:
-   - SUBSITE_WORLD_WAR_100   

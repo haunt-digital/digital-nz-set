@@ -15,9 +15,16 @@ Documentation
 A Silverstripe module for interacting with Digital NZ sets via the Digital NZ API.
 This currently only has functions for working with Digital NZ sets.
 
+The previously committed config.yml has been removed so that the Digital NZ tab doesn't automatically appear on every subsite.
+It will have to be manually added in to the site/subsite's config.yml file.
+
 Installation Instructions
 -----------------------------------------------
 1. Install SilverStripe module as usual. 
+2. Add the following to your config so that the 'Digital NZ' tab appears. 
+    SiteConfig:
+      extensions:
+       - DigitalNZSetSiteConfig
 2. Run /dev/build?flush=1
 3. In the admin/settings page you should have a tab for 'Digital NZ'.
 4. Enter your Digital NZ API key into the form. 
